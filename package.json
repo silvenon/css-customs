@@ -1,0 +1,69 @@
+{
+  "name": "css-custom-globals-loader",
+  "version": "0.1.0",
+  "description": "Exposes custom properties, custom media queries and custom selectors to JavaScript",
+  "main": "index.js",
+  "repository": "https://github.com/silvenon/css-custom-globals-loader",
+  "author": "Matija Marohnić <matija.marohnic@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "webpack",
+    "webpack-plugin",
+    "css",
+    "postcss",
+    "postcss-custom-properties",
+    "postcss-custom-media",
+    "postcss-custom-selectors",
+    "postcss-preset-env"
+  ],
+  "engines": {
+    "node": ">= 8.9.0"
+  },
+  "scripts": {
+    "test": "eslint . && jest"
+  },
+  "peerDependencies": {
+    "postcss-preset-env": "^6.4.0",
+    "webpack": "^4.0.0"
+  },
+  "dependencies": {
+    "postcss": "^7.0.5",
+    "require-from-string": "^2.0.2"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.1.4",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.0.4",
+    "memory-fs": "^0.4.1",
+    "prettier": "^1.15.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "watchPathIgnorePatterns": [
+      "<rootDir>/test/dist"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5"
+  },
+  "husky": {
+    "pre-commit": "lint-staged",
+    "pre-push": "yarn test"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "jest --findRelatedTests",
+      "git add"
+    ]
+  }
+}
