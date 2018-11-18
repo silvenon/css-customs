@@ -171,12 +171,12 @@ Now this custom media query and custom properties will be available in all CSS f
 ```
 
 ```jsx
-// index.js
+// kitten-image.js
 import React from 'react'
 import { customMedia, customProperties } from './global.css'
 import styles from './style.css'
 
-const Image = () => (
+const KittenImage = () => (
   <img
     className={styles.image}
     alt="a kitten"
@@ -189,6 +189,8 @@ const Image = () => (
     `}
   />
 )
+
+export default KittenImage
 ```
 
 **Always import your customs.** Even if you're not using the exported values in JavaScript, import `global.css` at least once in your app in order to ensure that its contents end up in your CSS. It's true that postcss-preset-env provides fallbacks for browsers that don't support custom properties, but those that do will try to use them and fail if they don't exist.
