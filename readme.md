@@ -133,7 +133,7 @@ module.exports = {
   plugins: {
     'postcss-preset-env': {
       // contents of this file will be available in every CSS file
-      importFrom: 'customs.css',
+      importFrom: 'global.css',
       // enable all features, the default stage 2
       // doesn't include features like custom media queries
       stage: 0,
@@ -146,7 +146,7 @@ module.exports = {
 ```
 
 ```css
-/* customs.css */
+/* global.css */
 @custom-media --narrow-window (min-width: 30em);
 
 :root {
@@ -173,7 +173,7 @@ Now this custom media query and custom properties will be available in all CSS f
 ```jsx
 // index.js
 import React from 'react'
-import { customMedia, customProperties } from './customs.css'
+import { customMedia, customProperties } from './global.css'
 import styles from './style.css'
 
 const Image = () => (
@@ -191,7 +191,7 @@ const Image = () => (
 )
 ```
 
-**Always import your customs.** Even if you're not using the exported values in JavaScript, import `customs.css` at least once in your app in order to ensure that its contents end up in your CSS. It's true that postcss-preset-env provides fallbacks for browsers that don't support custom properties, but those that do will try to use them and fail if they don't exist.
+**Always import your customs.** Even if you're not using the exported values in JavaScript, import `global.css` at least once in your app in order to ensure that its contents end up in your CSS. It's true that postcss-preset-env provides fallbacks for browsers that don't support custom properties, but those that do will try to use them and fail if they don't exist.
 
 Despite its name, `importFrom` doesn't actually import that file, postcss-preset-env only uses it to provide fallbacks. This is why you need to import it as a module yourself.
 
