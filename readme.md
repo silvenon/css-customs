@@ -1,4 +1,4 @@
-# css-customs-loader
+# css-customs-loader [![Build Status](https://travis-ci.org/silvenon/css-customs-loader.svg?branch=master)](https://travis-ci.org/silvenon/css-customs-loader)
 
 Exposes CSS custom properties, custom media queries and custom selectors (I call them "customs") to JavaScript.
 
