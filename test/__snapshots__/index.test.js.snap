@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`exposes CSS Modules in the same object as globals 1`] = `
+exports[`exposes CSS Modules in the same object as customs 1`] = `
 "exports = module.exports = require(\\"../../node_modules/css-loader/lib/css-base.js\\")(false);
 // imports
 
@@ -16,7 +16,7 @@ exports.locals = {
 exports.locals = Object.assign({}, exports.locals, {\\"customMedia\\":{\\"--narrow-window\\":\\"(max-width: 30em)\\"},\\"customProperties\\":{\\"--primary-color\\":\\"lightblue\\"},\\"customSelectors\\":{\\":--title\\":\\"h1\\"}});"
 `;
 
-exports[`exposes CSS globals in the default export object 1`] = `
+exports[`exposes CSS customs in the default export object 1`] = `
 "exports = module.exports = require(\\"../../node_modules/css-loader/lib/css-base.js\\")(false);
 // imports
 
