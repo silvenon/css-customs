@@ -1,13 +1,13 @@
-# css-custom-globals-loader
+# css-customs-loader
 
-Exposes CSS globals like custom properties, custom media queries and custom selectors.
+Exposes CSS custom properties, custom media queries and custom selectors (I call them "customs") to JavaScript.
 
 Recommended with [postcss-preset-env][], instructions below.
 
 ## Usage
 
 ```
-yarn add css-custom-globals-loader
+yarn add css-customs-loader
 ```
 
 ### Basic
@@ -24,7 +24,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-custom-globals-loader',
+          'css-customs-loader',
           'css-loader',
         ],
       },
@@ -33,7 +33,7 @@ module.exports = {
 }
 ```
 
-Write CSS containing globals:
+Write CSS containing customs:
 
 ```css
 /* style.css */
@@ -59,7 +59,7 @@ console.log(customSelectors['--title']) // 'h1'
 
 ### With CSS Modules
 
-When using [CSS Modules][css-modules], CSS globals will be exported along with class names in the same object.
+When using [CSS Modules][css-modules], CSS customs will be exported along with class names in the same object.
 
 ```js
 // webpack.config.js
@@ -71,7 +71,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-custom-globals-loader',
+          'css-customs-loader',
           'css-loader?modules',
         ],
       },
@@ -115,7 +115,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-custom-globals-loader',
+          'css-customs-loader',
           'css-loader?modules&importLoaders=1',
           'postcss-loader',
         ]
@@ -125,7 +125,7 @@ module.exports = {
 }
 ```
 
-Configure postcss-preset-env to use globals when compiling CSS files:
+Configure postcss-preset-env to use customs when compiling CSS files:
 
 ```js
 // postcss.config.js
@@ -133,12 +133,12 @@ module.exports = {
   plugins: {
     'postcss-preset-env': {
       // contents of this file will be available in every CSS file
-      importFrom: 'globals.css',
+      importFrom: 'customs.css',
       // enable all features, the default stage 2
       // doesn't include features like custom media queries
       stage: 0,
       // don't strip off experimental features like custom media queries,
-      // otherwise css-custom-globals-loader won't be able to expose them
+      // otherwise css-customs-loader won't be able to expose them
       preserve: true,
     },
   },
@@ -146,7 +146,7 @@ module.exports = {
 ```
 
 ```css
-/* globals.css */
+/* customs.css */
 @custom-media --narrow-window (min-width: 30em);
 
 :root {
@@ -173,7 +173,7 @@ Now this custom media query and custom properties will be available in all CSS f
 ```jsx
 // index.js
 import React from 'react'
-import { customMedia, customProperties } from './globals.css'
+import { customMedia, customProperties } from './customs.css'
 import styles from './style.css'
 
 const Image = () => (
@@ -191,13 +191,13 @@ const Image = () => (
 )
 ```
 
-**Always import your globals.** Even if you're not sharing CSS globals with JavaScript, import `globals.css` at least once in your app in order to ensure that its contents end up in your CSS. It's true that postcss-preset-env provides fallbacks for browsers that don't support custom properties, but those that do will try to use them and fail if they don't exist.
+**Always import your customs.** Even if you're not using the exported values in JavaScript, import `customs.css` at least once in your app in order to ensure that its contents end up in your CSS. It's true that postcss-preset-env provides fallbacks for browsers that don't support custom properties, but those that do will try to use them and fail if they don't exist.
 
 Despite its name, `importFrom` doesn't actually import that file, postcss-preset-env only uses it to provide fallbacks. This is why you need to import it as a module yourself.
 
 ## Caveats
 
-Exposing globals and class names in the same object is not ideal because if we were to use the class name `.customProperties`, it would get overwritten with the `customProperties` object and we would be unable to access it.
+Exposing customs and class names in the same object is not ideal because if we were to use the class name `.customProperties`, it would get overwritten with the `customProperties` object and we would be unable to access it.
 
 [postcss-preset-env]: https://preset-env.cssdb.org/
 [css-modules]: https://github.com/webpack-contrib/css-loader#modules

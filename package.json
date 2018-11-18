@@ -1,9 +1,9 @@
 {
-  "name": "css-custom-globals-loader",
+  "name": "css-customs-loader",
   "version": "0.1.0",
   "description": "Exposes custom properties, custom media queries and custom selectors to JavaScript",
   "main": "index.js",
-  "repository": "https://github.com/silvenon/css-custom-globals-loader",
+  "repository": "https://github.com/silvenon/css-customs-loader",
   "author": "Matija Marohnić <matija.marohnic@gmail.com>",
   "license": "MIT",
   "keywords": [
