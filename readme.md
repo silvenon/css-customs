@@ -55,7 +55,7 @@ import { customProperties, customMedia, customSelectors } from './style.css'
 
 console.log(customProperties['--primary-color']) // 'lightblue'
 console.log(customMedia['--narrow-window']) // '(max-width: 30em)'
-console.log(customSelectors['--title']) // 'h1'
+console.log(customSelectors[':--title']) // 'h1'
 ```
 
 ### With CSS Modules
