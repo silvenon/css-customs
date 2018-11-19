@@ -14,6 +14,7 @@ module.exports = (entry, { cssRuleUse, writeToDisk = false }) => {
     },
     context: __dirname,
     mode: 'none',
+    target: 'node',
     module: {
       rules: [
         {

@@ -29,3 +29,13 @@ it('exposes CSS Modules in the same object as customs', async () => {
   const output = stats.toJson().modules.find(m => m.name.includes(entry)).source
   expect(output).toMatchSnapshot()
 })
+
+it('supports files with external @imports', async () => {
+  const entry = './fixtures/external.css'
+  const stats = await compile(entry, {
+    cssRuleUse: [cssCustomsLoader, 'css-loader'],
+  })
+  expect(stats.hasErrors()).toBe(false)
+  const output = stats.toJson().modules.find(m => m.name.includes(entry)).source
+  expect(output).toMatchSnapshot()
+})

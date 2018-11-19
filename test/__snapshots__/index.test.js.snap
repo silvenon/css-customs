@@ -28,3 +28,16 @@ exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n
 
 exports.locals = Object.assign({}, exports.locals, {\\"customMedia\\":{\\"--narrow-window\\":\\"(max-width: 30em)\\"},\\"customProperties\\":{\\"--primary-color\\":\\"lightblue\\"},\\"customSelectors\\":{\\":--title\\":\\"h1\\"}});"
 `;
+
+exports[`supports files with external @imports 1`] = `
+"exports = module.exports = require(\\"../../node_modules/css-loader/lib/css-base.js\\")(false);
+// imports
+exports.i(require(\\"-!../../node_modules/css-loader/index.js!normalize.css\\"), \\"\\");
+
+// module
+exports.push([module.id, \\"\\\\n\\", \\"\\"]);
+
+// exports
+
+exports.locals = Object.assign({}, exports.locals, {\\"customMedia\\":{},\\"customProperties\\":{},\\"customSelectors\\":{}});"
+`;
