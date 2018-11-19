@@ -23,11 +23,11 @@
     "test": "eslint . && jest"
   },
   "peerDependencies": {
-    "postcss-preset-env": "^6.4.0",
     "webpack": "^4.0.0"
   },
   "dependencies": {
     "postcss": "^7.0.5",
+    "postcss-preset-env": "^6.4.0",
     "require-from-string": "^2.0.2"
   },
   "devDependencies": {
@@ -40,7 +40,6 @@
     "jest": "^23.6.0",
     "lint-staged": "^8.0.4",
     "memory-fs": "^0.4.1",
-    "postcss-preset-env": "^6.4.0",
     "prettier": "^1.15.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.25.1"
