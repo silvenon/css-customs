@@ -13,17 +13,16 @@ exports.locals = {
 	\\"text\\": \\"_3KySKA6rf07sl0ilq7bBBm\\"
 };
 
-exports.locals = Object.assign({}, exports.locals, {
-  \\"customMedia\\": {
-    \\"--narrow-window\\": \\"(max-width: 30em)\\"
-  },
-  \\"customProperties\\": {
-    \\"--primary-color\\": \\"lightblue\\"
-  },
-  \\"customSelectors\\": {
-    \\":--title\\": \\"h1\\"
-  }
-})"
+exports.locals = exports.locals || {};
+exports.locals[\\"customMedia\\"] = {
+  \\"--narrow-window\\": \\"(max-width: 30em)\\"
+};
+exports.locals[\\"customProperties\\"] = {
+  \\"--primary-color\\": \\"lightblue\\"
+};
+exports.locals[\\"customSelectors\\"] = {
+  \\":--title\\": \\"h1\\"
+};"
 `;
 
 exports[`exposes CSS customs in the default export object 1`] = `
@@ -36,17 +35,16 @@ exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n
 
 // exports
 
-exports.locals = Object.assign({}, exports.locals, {
-  \\"customMedia\\": {
-    \\"--narrow-window\\": \\"(max-width: 30em)\\"
-  },
-  \\"customProperties\\": {
-    \\"--primary-color\\": \\"lightblue\\"
-  },
-  \\"customSelectors\\": {
-    \\":--title\\": \\"h1\\"
-  }
-})"
+exports.locals = exports.locals || {};
+exports.locals[\\"customMedia\\"] = {
+  \\"--narrow-window\\": \\"(max-width: 30em)\\"
+};
+exports.locals[\\"customProperties\\"] = {
+  \\"--primary-color\\": \\"lightblue\\"
+};
+exports.locals[\\"customSelectors\\"] = {
+  \\":--title\\": \\"h1\\"
+};"
 `;
 
 exports[`uses PostCSS plugins before postcss-preset-env 1`] = `
@@ -59,13 +57,12 @@ exports.push([module.id, \\":root {\\\\n  --primary-color: #1da1f2;\\\\n}\\\\n\\
 
 // exports
 
-exports.locals = Object.assign({}, exports.locals, {
-  \\"customMedia\\": {},
-  \\"customProperties\\": {
-    \\"--primary-color\\": \\"#1da1f2\\"
-  },
-  \\"customSelectors\\": {}
-})"
+exports.locals = exports.locals || {};
+exports.locals[\\"customMedia\\"] = {};
+exports.locals[\\"customProperties\\"] = {
+  \\"--primary-color\\": \\"#1da1f2\\"
+};
+exports.locals[\\"customSelectors\\"] = {};"
 `;
 
 exports[`uses webpack loaders after postcss-loader 1`] = `
@@ -78,11 +75,10 @@ exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n
 
 // exports
 
-exports.locals = Object.assign({}, exports.locals, {
-  \\"customMedia\\": {},
-  \\"customProperties\\": {
-    \\"--primary-color\\": \\"lightblue\\"
-  },
-  \\"customSelectors\\": {}
-})"
+exports.locals = exports.locals || {};
+exports.locals[\\"customMedia\\"] = {};
+exports.locals[\\"customProperties\\"] = {
+  \\"--primary-color\\": \\"lightblue\\"
+};
+exports.locals[\\"customSelectors\\"] = {};"
 `;
