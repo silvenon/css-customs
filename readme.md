@@ -70,7 +70,7 @@ module.exports = {
     'postcss-preset-env': {
       importFrom: 'src/global.css',
       features: {
-        'custom-properties': true, // by default only this is enabled
+        'custom-properties': true, // already enabled by default
         'custom-media-queries': true,
         'custom-selectors': true,
       },
@@ -151,6 +151,16 @@ console.log(styles.link) // '_23_aKvs-b8bW2Vg3fwHozO'
 
 If you didn't get enough, [here's a more complex example][advanced-example] of how you might use css-customs-loader to make your codebase more DRY without compromising CSS authoring experience.
 
+## Flexibility
+
+If you know that wepback loaders are executed from right to left and that postcss-preset-env strips away experimental features by default, you might be wondering how css-customs-loader is able to export customs so late in the execution phase, when the CSS file is already processed.
+
+It does this by retrieving the contents of the module right before being processed with postcss-loader. This also means that if you happen to be combining postcss-loader with e.g. sass-loader, css-customs-loader will apply sass-loader before parsing it!
+
+Plugins specified in your PostCSS configuration are also ordered. If you happen to use a plugin like [postcss-brand-colors][] _before_ postcss-preset-env to set a custom property to a brand color, you can count on css-customs-loader to apply that plugin before exporting customs!
+
+In summary, if you have a complicated set up of webpack loaders and PostCSS plugins, as long as you put them in the correct order you can expect css-customs-loader to behave the way you want.
+
 [postcss-preset-env]: https://preset-env.cssdb.org/
 [postcss-loader]: https://github.com/postcss/postcss-loader
 [importFrom]: https://github.com/csstools/postcss-preset-env#importfrom
@@ -159,3 +169,4 @@ If you didn't get enough, [here's a more complex example][advanced-example] of h
 [postcss-config]: https://github.com/michael-ciniawsky/postcss-load-config
 [css-modules]: https://github.com/webpack-contrib/css-loader#modules
 [advanced-example]: https://github.com/silvenon/css-customs-loader/tree/master/example
+[postcss-brand-colors]: https://github.com/postcss/postcss-brand-colors
