@@ -20,7 +20,8 @@
     "node": ">= 8.9.0"
   },
   "scripts": {
-    "test": "eslint . && jest"
+    "test": "eslint . && jest",
+    "prepublishOnly": "yarn test"
   },
   "peerDependencies": {
     "postcss-loader": ">=3.0.0",
