@@ -5,7 +5,7 @@ const path = require('path')
 
 // https://webpack.js.org/contribute/writing-a-loader/#testing
 
-module.exports = (entry, { cssRuleUse, writeToDisk = false }) => {
+module.exports = ({ entry, logErrors = true, writeToDisk = false, rules }) => {
   const compiler = webpack({
     entry,
     output: {
@@ -14,16 +14,11 @@ module.exports = (entry, { cssRuleUse, writeToDisk = false }) => {
     },
     context: __dirname,
     mode: 'none',
-    target: 'node',
-    module: {
-      rules: [
-        {
-          test: /\.css$/,
-          include: `${__dirname}/fixtures`,
-          use: cssRuleUse,
-        },
-      ],
+    stats: {
+      errorDetails: false,
     },
+    target: 'node',
+    module: { rules },
   })
 
   if (!writeToDisk) {
@@ -32,8 +27,13 @@ module.exports = (entry, { cssRuleUse, writeToDisk = false }) => {
 
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
-      if (err) reject(err)
-      resolve(stats)
+      if (err != null) {
+        return reject(err)
+      }
+      if (stats.hasErrors() && logErrors) {
+        console.error(stats.toJson().errors.join('\n\n'))
+      }
+      resolve({ stats, entry })
     })
   })
 }

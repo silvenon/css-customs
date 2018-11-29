@@ -6,14 +6,24 @@ exports[`exposes CSS Modules in the same object as customs 1`] = `
 
 
 // module
-exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\\\n@custom-media --narrow-window (max-width: 30em);\\\\n\\\\n@custom-selector :--title h1;\\\\n\\\\n._3KySKA6rf07sl0ilq7bBBm {\\\\n  color: var(--primary-color);\\\\n}\\\\n\\", \\"\\"]);
+exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\\\n._3KySKA6rf07sl0ilq7bBBm {\\\\n  color: lightblue;\\\\n  color: var(--primary-color);\\\\n}\\\\n\\", \\"\\"]);
 
 // exports
 exports.locals = {
 	\\"text\\": \\"_3KySKA6rf07sl0ilq7bBBm\\"
 };
 
-exports.locals = Object.assign({}, exports.locals, {\\"customMedia\\":{\\"--narrow-window\\":\\"(max-width: 30em)\\"},\\"customProperties\\":{\\"--primary-color\\":\\"lightblue\\"},\\"customSelectors\\":{\\":--title\\":\\"h1\\"}});"
+exports.locals = Object.assign({}, exports.locals, {
+  \\"customMedia\\": {
+    \\"--narrow-window\\": \\"(max-width: 30em)\\"
+  },
+  \\"customProperties\\": {
+    \\"--primary-color\\": \\"lightblue\\"
+  },
+  \\"customSelectors\\": {
+    \\":--title\\": \\"h1\\"
+  }
+})"
 `;
 
 exports[`exposes CSS customs in the default export object 1`] = `
@@ -22,22 +32,57 @@ exports[`exposes CSS customs in the default export object 1`] = `
 
 
 // module
-exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\\\n@custom-media --narrow-window (max-width: 30em);\\\\n\\\\n@custom-selector :--title h1;\\\\n\\", \\"\\"]);
+exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\", \\"\\"]);
 
 // exports
 
-exports.locals = Object.assign({}, exports.locals, {\\"customMedia\\":{\\"--narrow-window\\":\\"(max-width: 30em)\\"},\\"customProperties\\":{\\"--primary-color\\":\\"lightblue\\"},\\"customSelectors\\":{\\":--title\\":\\"h1\\"}});"
+exports.locals = Object.assign({}, exports.locals, {
+  \\"customMedia\\": {
+    \\"--narrow-window\\": \\"(max-width: 30em)\\"
+  },
+  \\"customProperties\\": {
+    \\"--primary-color\\": \\"lightblue\\"
+  },
+  \\"customSelectors\\": {
+    \\":--title\\": \\"h1\\"
+  }
+})"
 `;
 
-exports[`supports files with external @imports 1`] = `
+exports[`uses PostCSS plugins before postcss-preset-env 1`] = `
 "exports = module.exports = require(\\"../../node_modules/css-loader/lib/css-base.js\\")(false);
 // imports
-exports.i(require(\\"-!../../node_modules/css-loader/index.js!normalize.css\\"), \\"\\");
+
 
 // module
-exports.push([module.id, \\"\\\\n\\", \\"\\"]);
+exports.push([module.id, \\":root {\\\\n  --primary-color: #1da1f2;\\\\n}\\\\n\\", \\"\\"]);
 
 // exports
 
-exports.locals = Object.assign({}, exports.locals, {\\"customMedia\\":{},\\"customProperties\\":{},\\"customSelectors\\":{}});"
+exports.locals = Object.assign({}, exports.locals, {
+  \\"customMedia\\": {},
+  \\"customProperties\\": {
+    \\"--primary-color\\": \\"#1da1f2\\"
+  },
+  \\"customSelectors\\": {}
+})"
+`;
+
+exports[`uses webpack loaders after postcss-loader 1`] = `
+"exports = module.exports = require(\\"../../node_modules/css-loader/lib/css-base.js\\")(false);
+// imports
+
+
+// module
+exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n.text {\\\\n  color: lightblue;\\\\n  color: var(--primary-color);\\\\n}\\\\n\\", \\"\\"]);
+
+// exports
+
+exports.locals = Object.assign({}, exports.locals, {
+  \\"customMedia\\": {},
+  \\"customProperties\\": {
+    \\"--primary-color\\": \\"lightblue\\"
+  },
+  \\"customSelectors\\": {}
+})"
 `;
