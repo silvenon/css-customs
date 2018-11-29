@@ -61,7 +61,7 @@ module.exports = {
 }
 ```
 
-css-customs-loader detects [any valid PostCSS configuration][postcss-config] (including options passed to postcss-loader!) so let's create a configuration file which. We'll have a `global.css` file containing our customs and, for the sake of this example, we'll enable all features relevant to this loader:
+css-customs-loader detects [any valid PostCSS configuration][postcss-config] (including options passed to postcss-loader!), so let's create one. `importFrom` will point to a `global.css` file containing our customs and, for the sake of this example, we'll enable all features relevant to this loader:
 
 ```js
 // postcss.config.js
