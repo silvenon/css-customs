@@ -14,9 +14,6 @@ module.exports = ({ entry, logErrors = true, writeToDisk = false, rules }) => {
     },
     context: __dirname,
     mode: 'none',
-    stats: {
-      errorDetails: false,
-    },
     target: 'node',
     module: { rules },
   })
