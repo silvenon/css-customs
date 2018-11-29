@@ -1,6 +1,6 @@
 {
   "name": "css-customs-loader",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Exposes custom properties, custom media queries and custom selectors to JavaScript",
   "main": "index.js",
   "repository": "https://github.com/silvenon/css-customs-loader",
