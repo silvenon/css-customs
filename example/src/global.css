@@ -1,0 +1,6 @@
+:root {
+  --image-width: 300px;
+  --image-width-narrow: 200px;
+}
+
+@custom-media --narrow-window (max-width: 30em);

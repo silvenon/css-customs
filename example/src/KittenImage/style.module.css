@@ -1,0 +1,9 @@
+.image {
+  width: var(--image-width);
+}
+
+@media (--narrow-window) {
+  .image {
+    width: var(--image-width-narrow);
+  }
+}

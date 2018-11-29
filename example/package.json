@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "cloudinary-core": "^2.5.0",
+    "css-customs-loader": "../",
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.1.10"
+  }
+}

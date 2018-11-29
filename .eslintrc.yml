@@ -1,5 +1,7 @@
 parserOptions:
   ecmaVersion: 9
+  ecmaFeatures:
+    jsx: true
 
 env:
   es6: true
@@ -8,13 +10,16 @@ env:
 plugins:
   - import
   - jest
+  - react
   - prettier
 
 extends:
   - eslint:recommended
   - plugin:import/recommended
   - plugin:jest/recommended
+  - plugin:react/recommended
   - prettier
+  - prettier/react
 
 rules:
   import/no-unresolved:
@@ -31,3 +36,6 @@ overrides:
   - files: "**/*.test.js"
     env:
       jest: true
+  - files: "example/**/*.js"
+    env:
+      browser: true

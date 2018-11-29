@@ -149,51 +149,7 @@ console.log(styles.link) // '_23_aKvs-b8bW2Vg3fwHozO'
 
 ## Advanced example
 
-If you didn't get enough, here's a more complex example of how you might use css-customs-loader to make your codebase more DRY without compromising CSS authoring experience:
-
-```css
-/* global.css */
-:root {
-  --image-width: 300px;
-  --image-width-narrow: 200px;
-}
-
-@custom-media --narrow-window (max-width: 30em);
-```
-
-```css
-/* style.css */
-.image {
-  width: var(--image-width);
-}
-
-@media (--narrow-window) {
-  width: var(--image-width-narrow);
-}
-```
-
-```jsx
-// kitten-image.js
-import React from 'react'
-import { customMedia, customProperties } from './global.css'
-import styles from './style.css'
-
-const KittenImage = () => (
-  <img
-    className={styles.image}
-    alt="a kitten"
-    src="kitten-200.jpg"
-    srcSet="kitten-200.jpg 200w,
-            kitten-300.jpg 300w"
-    sizes={`
-      ${customMedia['--narrow-window']} ${customProperties['--image-width-narrow']},
-      ${customProperties['--image-width']}
-    `}
-  />
-)
-
-export default KittenImage
-```
+If you didn't get enough, [here's a more complex example][advanced-example] of how you might use css-customs-loader to make your codebase more DRY without compromising CSS authoring experience.
 
 [postcss-preset-env]: https://preset-env.cssdb.org/
 [postcss-loader]: https://github.com/postcss/postcss-loader
@@ -202,3 +158,4 @@ export default KittenImage
 [caniuse-custom-properties]: https://caniuse.com/#feat=css-variables
 [postcss-config]: https://github.com/michael-ciniawsky/postcss-load-config
 [css-modules]: https://github.com/webpack-contrib/css-loader#modules
+[advanced-example]: https://github.com/silvenon/css-customs-loader/tree/master/example
