@@ -52,7 +52,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-customs-loader',
-          'css-loader',
+          'css-loader?importLoaders=1',
           'postcss-loader',
         ],
       },

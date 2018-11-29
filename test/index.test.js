@@ -10,7 +10,11 @@ describe(`emits an error`, () => {
       rules: [
         {
           test: /\.css$/,
-          use: ['css-loader', cssCustomsLoader, 'postcss-loader'],
+          use: [
+            'css-loader?importLoaders=2',
+            cssCustomsLoader,
+            'postcss-loader',
+          ],
         },
       ],
     })
@@ -26,7 +30,7 @@ describe(`emits an error`, () => {
           test: /\.css$/,
           use: [
             cssCustomsLoader,
-            'css-loader',
+            'css-loader?importLoaders=1',
             {
               loader: 'postcss-loader',
               options: {
@@ -61,7 +65,7 @@ it(`exposes CSS customs in the default export object`, async () => {
     rules: [
       {
         test: /\.css$/,
-        use: [cssCustomsLoader, 'css-loader', 'postcss-loader'],
+        use: [cssCustomsLoader, 'css-loader?importLoaders=1', 'postcss-loader'],
       },
     ],
   })
@@ -76,7 +80,11 @@ it(`exposes CSS Modules in the same object as customs`, async () => {
     rules: [
       {
         test: /\.css$/,
-        use: [cssCustomsLoader, 'css-loader?modules', 'postcss-loader'],
+        use: [
+          cssCustomsLoader,
+          'css-loader?importLoaders=1&modules',
+          'postcss-loader',
+        ],
       },
     ],
   })
@@ -91,7 +99,17 @@ it(`supports files with external @imports`, async () => {
     rules: [
       {
         test: /\.css$/,
-        use: [cssCustomsLoader, 'css-loader', 'postcss-loader'],
+        include: `${__dirname}/fixtures`,
+        use: [
+          cssCustomsLoader,
+          'css-loader?importLoaders=1',
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: { path: __dirname },
+            },
+          },
+        ],
       },
     ],
   })
@@ -106,7 +124,7 @@ it(`uses PostCSS plugins before postcss-preset-env`, async () => {
         test: /\.css$/,
         use: [
           cssCustomsLoader,
-          'css-loader',
+          'css-loader?importLoaders=1',
           {
             loader: 'postcss-loader',
             options: {
@@ -131,7 +149,12 @@ it('uses webpack loaders after postcss-loader', async () => {
     rules: [
       {
         test: /\.less$/,
-        use: [cssCustomsLoader, 'css-loader', 'postcss-loader', 'less-loader'],
+        use: [
+          cssCustomsLoader,
+          'css-loader?importLoaders=2',
+          'postcss-loader',
+          'less-loader',
+        ],
       },
     ],
   })
