@@ -45,6 +45,7 @@
   },
   "jest": {
     "testEnvironment": "node",
+    "rootDir": ".",
     "watchPathIgnorePatterns": [
       "<rootDir>/test/dist"
     ]
