@@ -132,5 +132,5 @@ In summary, if you have a complicated set up of webpack loaders and PostCSS plug
 [exportTo]: https://github.com/csstools/postcss-preset-env#exportTo
 [caniuse-custom-properties]: https://caniuse.com/#feat=css-variables
 [css-modules]: https://github.com/webpack-contrib/css-loader#modules
-[advanced-example]: https://github.com/silvenon/css-customs-loader/tree/master/example
+[advanced-example]: https://github.com/silvenon/css-customs-loader/blob/master/example
 [postcss-brand-colors]: https://github.com/postcss/postcss-brand-colors
