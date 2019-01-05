@@ -108,7 +108,7 @@ console.log(styles.link) // '_23_aKvs-b8bW2Vg3fwHozO'
 
   - Exposing customs and class names in the same object means that we can't use a class name like `.customProperties` because it would get silently overwritten with the `customProperties` object, making it inaccessible.
 
-  - If using custom selectors, you need to wrap every usage with `:global()`, otherwise the classes inside will be processed with CSS Modules, so resulting selectors will not match the ones exported in `customSelectors`.
+  - When using custom selectors with CSS Modules, you need to wrap every usage with `:global()`, otherwise the classes inside will be processed with CSS Modules, so resulting selectors will not match the ones exported in `customSelectors`.
 
 ## Advanced example
 
