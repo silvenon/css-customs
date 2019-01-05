@@ -1,5 +1,10 @@
-# css-customs-loader [![Travis (.org) branch](https://img.shields.io/travis/silvenon/css-customs-loader.svg?style=flat-square)](https://travis-ci.org/silvenon/css-customs-loader)
+# CSS Customs ![monorepo](https://img.shields.io/badge/mono-repo-ff69b4.svg?style=flat-square) [![Travis (.org) branch](https://img.shields.io/travis/silvenon/css-customs.svg?style=flat-square)](https://travis-ci.org/silvenon/css-customs)
 
+Contains one package:
+
+  - [css-customs-loader][]
+
+---
 
 Exposes CSS custom properties, custom media queries and custom selectors to JavaScript.
 
@@ -35,49 +40,7 @@ The `exportTo` option enables us to export customs to a JavaScript file, so this
 
 ## Configuration
 
-```
-yarn add css-customs-loader postcss-loader postcss-preset-env
-```
-
-You need to add css-customs-loader **before** css-loader:
-
-```js
-// webpack.config.js
-module.exports = {
-  // ...
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-customs-loader',
-          'css-loader?importLoaders=1',
-          'postcss-loader',
-        ],
-      },
-    ],
-  },
-}
-```
-
-css-customs-loader detects [any valid PostCSS configuration][postcss-config] (including options passed to postcss-loader!), so let's create one. `importFrom` will point to a `global.css` file containing our customs and, for the sake of this example, we'll enable all features relevant to this loader:
-
-```js
-// postcss.config.js
-module.exports = {
-  plugins: {
-    'postcss-preset-env': {
-      importFrom: 'src/global.css',
-      features: {
-        'custom-properties': true, // already enabled by default
-        'custom-media-queries': true,
-        'custom-selectors': true,
-      },
-    },
-  },
-}
-```
+  - [css-customs-loader][css-customs-loader:config]
 
 ## Basic usage
 
@@ -161,12 +124,13 @@ Plugins specified in your PostCSS configuration are also ordered. If you happen 
 
 In summary, if you have a complicated set up of webpack loaders and PostCSS plugins, as long as you put them in the correct order you can expect css-customs-loader to behave the way you want.
 
+[css-customs-loader]: https://github.com/silvenon/css-customs-loader/blob/master/packages/css-customs-loader
+[css-customs-loader:config]: https://github.com/silvenon/css-customs-loader/blob/master/packages/css-customs-loader/readme.md#configuration
 [postcss-preset-env]: https://preset-env.cssdb.org/
 [postcss-loader]: https://github.com/postcss/postcss-loader
 [importFrom]: https://github.com/csstools/postcss-preset-env#importfrom
 [exportTo]: https://github.com/csstools/postcss-preset-env#exportTo
 [caniuse-custom-properties]: https://caniuse.com/#feat=css-variables
-[postcss-config]: https://github.com/michael-ciniawsky/postcss-load-config
 [css-modules]: https://github.com/webpack-contrib/css-loader#modules
 [advanced-example]: https://github.com/silvenon/css-customs-loader/tree/master/example
 [postcss-brand-colors]: https://github.com/postcss/postcss-brand-colors

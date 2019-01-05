@@ -1,38 +1,14 @@
 {
-  "name": "css-customs-loader",
-  "version": "0.2.2",
-  "description": "Exposes custom properties, custom media queries and custom selectors to JavaScript",
-  "main": "index.js",
-  "repository": "https://github.com/silvenon/css-customs-loader",
-  "author": "Matija Marohnić <matija.marohnic@gmail.com>",
+  "name": "css-customs",
+  "private": true,
   "license": "MIT",
-  "keywords": [
-    "webpack",
-    "webpack-plugin",
-    "css",
-    "postcss",
-    "postcss-custom-properties",
-    "postcss-custom-media",
-    "postcss-custom-selectors",
-    "postcss-preset-env"
+  "workspaces": [
+    "packages/*",
+    "example"
   ],
-  "engines": {
-    "node": ">= 8.9.0"
-  },
   "scripts": {
     "test": "eslint . && jest",
     "prepublishOnly": "yarn test"
-  },
-  "peerDependencies": {
-    "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.4.0",
-    "webpack": "^4.0.0"
-  },
-  "dependencies": {
-    "loader-utils": "^1.1.0",
-    "postcss": "^7.0.5",
-    "postcss-load-config": "^2.0.0",
-    "raw-loader": "^0.5.1"
   },
   "devDependencies": {
     "css-loader": "^1.0.1",
@@ -44,6 +20,7 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.1.4",
     "jest": "^23.6.0",
+    "lerna": "^3.8.4",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lint-staged": "^8.0.4",

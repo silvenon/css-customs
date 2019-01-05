@@ -1,6 +1,13 @@
 const compile = require('./compile')
 
-const cssCustomsLoader = require.resolve('../')
+const cssCustomsLoader = require.resolve('css-customs-loader')
+const getCompiledOutput = ({ stats, entry }) =>
+  stats
+    .toJson()
+    .modules.find(
+      ({ name, identifier }) =>
+        name.includes(entry) && identifier.includes(cssCustomsLoader)
+    ).source
 
 describe(`emits an error`, () => {
   test(`when css-customs-loader is placed after css-loader`, async () => {
@@ -70,7 +77,7 @@ it(`exposes CSS customs in the default export object`, async () => {
     ],
   })
   expect(stats.hasErrors()).toBe(false)
-  const output = stats.toJson().modules.find(m => m.name.includes(entry)).source
+  const output = getCompiledOutput({ stats, entry })
   expect(output).toMatchSnapshot()
 })
 
@@ -89,7 +96,7 @@ it(`exposes CSS Modules in the same object as customs`, async () => {
     ],
   })
   expect(stats.hasErrors()).toBe(false)
-  const output = stats.toJson().modules.find(m => m.name.includes(entry)).source
+  const output = getCompiledOutput({ stats, entry })
   expect(output).toMatchSnapshot()
 })
 
@@ -139,7 +146,7 @@ it(`uses PostCSS plugins before postcss-preset-env`, async () => {
     ],
   })
   expect(stats.hasErrors()).toBe(false)
-  const output = stats.toJson().modules.find(m => m.name.includes(entry)).source
+  const output = getCompiledOutput({ stats, entry })
   expect(output).toMatchSnapshot()
 })
 
@@ -159,6 +166,6 @@ it('uses webpack loaders after postcss-loader', async () => {
     ],
   })
   expect(stats.hasErrors()).toBe(false)
-  const output = stats.toJson().modules.find(m => m.name.includes(entry)).source
+  const output = getCompiledOutput({ stats, entry })
   expect(output).toMatchSnapshot()
 })

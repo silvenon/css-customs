@@ -1,5 +1,6 @@
 {
   "name": "example",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server"
@@ -10,7 +11,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "cloudinary-core": "^2.5.0",
-    "css-customs-loader": "../",
+    "css-customs-loader": "^0.2.2",
     "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "postcss-loader": "^3.0.0",
