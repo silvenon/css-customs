@@ -1,0 +1,36 @@
+{
+  "name": "gatsby-plugin-css-customs",
+  "version": "0.2.2",
+  "description": "Gatsby plugin that implements css-customs-loader",
+  "main": "index.js",
+  "repository": "https://github.com/silvenon/css-customs",
+  "author": "Matija Marohnić <matija.marohnic@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "css",
+    "postcss",
+    "postcss-custom-properties",
+    "postcss-custom-media",
+    "postcss-custom-selectors",
+    "postcss-preset-env"
+  ],
+  "engines": {
+    "node": ">= 8.9.0"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "css-customs-loader": "^0.2.2",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0"
+  },
+  "devDependencies": {
+    "gatsby-plugin-css-modules-flow-types": "^0.1.1",
+    "gatsby-plugin-postcss": "^2.0.2",
+    "jest": "^23.6.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

@@ -1,8 +1,11 @@
 # CSS Customs ![monorepo](https://img.shields.io/badge/mono-repo-ff69b4.svg?style=flat-square) [![Travis (.org) branch](https://img.shields.io/travis/silvenon/css-customs.svg?style=flat-square)](https://travis-ci.org/silvenon/css-customs)
 
-Contains one package:
+This repository contains two packages:
 
   - [css-customs-loader][]
+  - [gatsby-plugin-css-customs][]
+
+The Gatsby plugin only implements css-customs-loader, so this readme is about css-customs-loader.
 
 ---
 
@@ -41,6 +44,7 @@ The `exportTo` option enables us to export customs to a JavaScript file, so this
 ## Configuration
 
   - [css-customs-loader][css-customs-loader:config]
+  - [gatsby-plugin-css-customs][gatsby-plugin-css-customs:config]
 
 ## Basic usage
 
@@ -126,6 +130,8 @@ In summary, if you have a complicated set up of webpack loaders and PostCSS plug
 
 [css-customs-loader]: https://github.com/silvenon/css-customs-loader/blob/master/packages/css-customs-loader
 [css-customs-loader:config]: https://github.com/silvenon/css-customs-loader/blob/master/packages/css-customs-loader/readme.md#configuration
+[gatsby-plugin-css-customs]: https://github.com/silvenon/css-customs-loader/blob/master/packages/gatsby-plugin-css-customs
+[gatsby-plugin-css-customs:config]: https://github.com/silvenon/css-customs-loader/blob/master/packages/gatsby-plugin-css-customs/readme.md#configuration
 [postcss-preset-env]: https://preset-env.cssdb.org/
 [postcss-loader]: https://github.com/postcss/postcss-loader
 [importFrom]: https://github.com/csstools/postcss-preset-env#importfrom

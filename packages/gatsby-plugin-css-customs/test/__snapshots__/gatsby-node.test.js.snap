@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`applies the loader 1`] = `
+Array [
+  Object {
+    "test": /\\\\\\.module\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "mini-css-extract-loader",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {
+          "importLoaders": 1,
+          "modules": true,
+        },
+      },
+      Object {
+        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "options": Object {
+          "sourceMap": true,
+        },
+      },
+    ],
+  },
+  Object {
+    "test": /\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "mini-css-extract-loader",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {
+          "importLoaders": 1,
+        },
+      },
+      Object {
+        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "options": Object {
+          "sourceMap": true,
+        },
+      },
+    ],
+  },
+  Object {
+    "test": /\\\\\\.module\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "style-loader",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {
+          "modules": true,
+        },
+      },
+    ],
+  },
+  Object {
+    "test": /\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "style-loader",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {},
+      },
+    ],
+  },
+]
+`;
+
+exports[`composes well with similar plugins 1`] = `
+Array [
+  Object {
+    "test": /\\\\\\.module\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "mini-css-extract-loader",
+        "options": Object {},
+      },
+      Object {
+        "loader": "/Users/silvenon/Code/css-customs/node_modules/css-modules-flow-types-loader/dist/index.js",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {
+          "importLoaders": 1,
+          "modules": true,
+        },
+      },
+      Object {
+        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "options": Object {
+          "sourceMap": true,
+        },
+      },
+    ],
+  },
+  Object {
+    "test": /\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "mini-css-extract-loader",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {
+          "importLoaders": 1,
+        },
+      },
+      Object {
+        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "options": Object {
+          "sourceMap": true,
+        },
+      },
+    ],
+  },
+  Object {
+    "test": /\\\\\\.module\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "style-loader",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {
+          "modules": true,
+        },
+      },
+    ],
+  },
+  Object {
+    "test": /\\\\\\.css\\$/,
+    "use": Array [
+      Object {
+        "loader": "style-loader",
+        "options": Object {},
+      },
+      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      Object {
+        "loader": "css-loader",
+        "options": Object {},
+      },
+    ],
+  },
+]
+`;
