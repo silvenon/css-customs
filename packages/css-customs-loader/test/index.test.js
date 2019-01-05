@@ -1,13 +1,14 @@
 const compile = require('./compile')
 
-const cssCustomsLoader = require.resolve('css-customs-loader')
+const cssCustomsLoader = require.resolve('../')
 const getCompiledOutput = ({ stats, entry }) =>
   stats
     .toJson()
     .modules.find(
       ({ name, identifier }) =>
         name.includes(entry) && identifier.includes(cssCustomsLoader)
-    ).source
+    )
+    .source.replace(/(["'])(\.\.\/)+node_modules/, '$1<path to node_modules>')
 
 describe(`emits an error`, () => {
   test(`when css-customs-loader is placed after css-loader`, async () => {
