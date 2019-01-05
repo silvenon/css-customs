@@ -1,4 +1,5 @@
 const { mockConfig, mockParams } = require('./utils')
+const { loaderSerializer } = require('./serializers')
 
 const {
   onCreateWebpackConfig: applyPostcss,
@@ -9,6 +10,8 @@ const {
 const { onCreateWebpackConfig: applyCssCustoms } = require('../gatsby-node')
 
 const getCssRules = config => config.module.rules.slice(-1)[0].oneOf
+
+expect.addSnapshotSerializer(loaderSerializer)
 
 it('applies the loader', () => {
   let config = mockConfig()

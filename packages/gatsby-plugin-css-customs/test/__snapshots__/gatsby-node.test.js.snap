@@ -9,7 +9,7 @@ Array [
         "loader": "mini-css-extract-loader",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {
@@ -18,7 +18,7 @@ Array [
         },
       },
       Object {
-        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "loader": "postcss-loader/src/index.js",
         "options": Object {
           "sourceMap": true,
         },
@@ -32,7 +32,7 @@ Array [
         "loader": "mini-css-extract-loader",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {
@@ -40,7 +40,7 @@ Array [
         },
       },
       Object {
-        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "loader": "postcss-loader/src/index.js",
         "options": Object {
           "sourceMap": true,
         },
@@ -54,7 +54,7 @@ Array [
         "loader": "style-loader",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {
@@ -70,7 +70,7 @@ Array [
         "loader": "style-loader",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {},
@@ -90,10 +90,10 @@ Array [
         "options": Object {},
       },
       Object {
-        "loader": "/Users/silvenon/Code/css-customs/node_modules/css-modules-flow-types-loader/dist/index.js",
+        "loader": "css-modules-flow-types-loader/dist/index.js",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {
@@ -102,7 +102,7 @@ Array [
         },
       },
       Object {
-        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "loader": "postcss-loader/src/index.js",
         "options": Object {
           "sourceMap": true,
         },
@@ -116,7 +116,7 @@ Array [
         "loader": "mini-css-extract-loader",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {
@@ -124,7 +124,7 @@ Array [
         },
       },
       Object {
-        "loader": "/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js",
+        "loader": "postcss-loader/src/index.js",
         "options": Object {
           "sourceMap": true,
         },
@@ -138,7 +138,7 @@ Array [
         "loader": "style-loader",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {
@@ -154,7 +154,7 @@ Array [
         "loader": "style-loader",
         "options": Object {},
       },
-      "/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js",
+      "css-customs-loader/index.js",
       Object {
         "loader": "css-loader",
         "options": Object {},
