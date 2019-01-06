@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-css-customs",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Gatsby plugin that implements css-customs-loader",
   "main": "index.js",
   "repository": "https://github.com/silvenon/css-customs",
@@ -19,9 +19,8 @@
   "engines": {
     "node": ">= 8.9.0"
   },
-  "peerDependencies": {},
   "dependencies": {
-    "css-customs-loader": "^0.2.2",
+    "css-customs-loader": "^0.2.3",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.5.0"
   },
