@@ -14,7 +14,7 @@ module.exports = async function(content, sourceMap, meta) {
   const loaderOptions = getOptions(this) || { stage: 0 }
 
   if (findNextLoader(this, 'css-loader') == null) {
-    return callback(error.addBeforeCssLoader)
+    return callback(error.addBeforeCssLoader(this.request))
   }
 
   const postcssLoaderIndex = this.loaders.findIndex(loader =>
