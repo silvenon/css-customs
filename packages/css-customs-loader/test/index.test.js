@@ -101,6 +101,25 @@ it(`exposes CSS Modules in the same object as customs`, async () => {
   expect(output).toMatchSnapshot()
 })
 
+it(`can export only locals`, async () => {
+  const { stats, entry } = await compile({
+    entry: './fixtures/modules.css',
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          `${cssCustomsLoader}?exportOnlyLocals`,
+          'css-loader/locals?importLoaders=1&modules',
+          'postcss-loader',
+        ],
+      },
+    ],
+  })
+  expect(stats.hasErrors()).toBe(false)
+  const output = getCompiledOutput({ stats, entry })
+  expect(output).toMatchSnapshot()
+})
+
 it(`supports files with external @imports`, async () => {
   const { stats } = await compile({
     entry: './fixtures/external.css',

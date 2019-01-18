@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`can export only locals 1`] = `
+"module.exports = {
+	\\"text\\": \\"_3KySKA6rf07sl0ilq7bBBm\\"
+};
+
+module.exports = module.exports || {};
+module.exports[\\"customMedia\\"] = {
+  \\"--narrow-window\\": \\"(max-width: 30em)\\"
+};
+module.exports[\\"customProperties\\"] = {
+  \\"--primary-color\\": \\"lightblue\\"
+};
+module.exports[\\"customSelectors\\"] = {
+  \\":--title\\": \\"h1\\"
+};"
+`;
+
 exports[`exposes CSS Modules in the same object as customs 1`] = `
 "exports = module.exports = require(\\"<path to node_modules>/css-loader/lib/css-base.js\\")(false);
 // imports

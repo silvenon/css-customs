@@ -11,7 +11,10 @@ const rawLoader = require.resolve('raw-loader')
 
 module.exports = async function(content, sourceMap, meta) {
   const callback = this.async()
-  const loaderOptions = getOptions(this) || { stage: 0 }
+  const { exportOnlyLocals = false } = getOptions(this) || {}
+  const presetEnvOptions = {
+    stage: 0,
+  }
 
   if (findNextLoader(this, 'css-loader') == null) {
     return callback(error.addBeforeCssLoader(this.request))
@@ -123,7 +126,7 @@ module.exports = async function(content, sourceMap, meta) {
     await postcss([
       ...previousPostcssPlugins,
       postcssPresetEnv({
-        ...loaderOptions,
+        ...presetEnvOptions,
         exportTo: customs => {
           extractedCustoms = customs
         },
@@ -134,11 +137,12 @@ module.exports = async function(content, sourceMap, meta) {
       to: undefined,
     })
 
+    const exportObj = exportOnlyLocals ? 'module.exports' : 'exports.locals'
     const exportContent = [
-      `exports.locals = exports.locals || {};`,
+      `${exportObj} = ${exportObj} || {};`,
       ...Object.entries(extractedCustoms).map(
         ([customsKey, customsMap]) =>
-          `exports.locals[${JSON.stringify(customsKey)}] = ${JSON.stringify(
+          `${exportObj}[${JSON.stringify(customsKey)}] = ${JSON.stringify(
             customsMap,
             null,
             2
