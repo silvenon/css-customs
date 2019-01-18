@@ -1,5 +1,5 @@
 module.exports.onCreateWebpackConfig = (
-  { actions, getConfig, loaders, rules },
+  { stage, actions, getConfig, loaders, rules },
   pluginOptions = {}
 ) => {
   const { cssModules = false } = pluginOptions
@@ -17,7 +17,12 @@ module.exports.onCreateWebpackConfig = (
   const cssRules = config.module.rules.find(
     rule => Array.isArray(rule.oneOf) && rule.oneOf.every(isAnyCssRule)
   )
-  const cssCustomsLoader = require.resolve('css-customs-loader')
+  const cssCustomsLoader = {
+    loader: require.resolve('css-customs-loader'),
+    options: {
+      exportOnlyLocals: stage.includes('html'),
+    },
+  }
 
   cssRules.oneOf
     .filter(cssModules ? isAnyCssRule : isPlainCssRule)

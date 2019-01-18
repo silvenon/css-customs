@@ -23,7 +23,9 @@ class TestUtils {
         options: { ...options },
       })),
       css: jest.fn(options => ({
-        loader: 'css-loader',
+        loader: this.stage.includes('html')
+          ? 'css-loader/locals'
+          : 'css-loader',
         options: { ...options },
       })),
       miniCssExtract: jest.fn(options => ({
@@ -42,11 +44,15 @@ class TestUtils {
       })),
       css: jest.fn(() => ({
         test: /\.css$/,
-        use: [loaders.style(), loaders.css()],
+        use: this.stage.includes('html')
+          ? [loaders.css()]
+          : [loaders.style(), loaders.css()],
       })),
       cssModules: jest.fn(() => ({
         test: /\.module\.css$/,
-        use: [loaders.style(), loaders.css({ modules: true })],
+        use: this.stage.includes('html')
+          ? [loaders.css()]
+          : [loaders.style(), loaders.css({ modules: true })],
       })),
     }
   }

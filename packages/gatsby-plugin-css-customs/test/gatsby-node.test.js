@@ -25,3 +25,12 @@ it('composes well with similar plugins', () => {
   applyCssCustoms(...utils.mockParams())
   expect(utils.getCssRules()).toMatchSnapshot()
 })
+
+describe('SSR', () => {
+  it('exports only locals', () => {
+    const utils = new TestUtils({ stage: 'html' })
+    applyPostcss(...utils.mockParams())
+    applyCssCustoms(...utils.mockParams())
+    expect(utils.getCssRules()).toMatchSnapshot()
+  })
+})
