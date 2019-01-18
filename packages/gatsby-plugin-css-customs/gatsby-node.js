@@ -1,6 +1,6 @@
 module.exports.onCreateWebpackConfig = (
   { actions, getConfig, loaders, rules },
-  pluginOptions
+  pluginOptions = {}
 ) => {
   const { cssModules = false } = pluginOptions
 
