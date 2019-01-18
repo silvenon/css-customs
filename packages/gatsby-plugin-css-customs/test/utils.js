@@ -2,74 +2,89 @@
  * Minimally reproduces everything that our dependencies need.
  */
 
-const mockLoaders = () => ({
-  null: jest.fn(options => ({
-    loader: 'null-loader',
-    options: { ...options },
-  })),
-  js: jest.fn(options => ({
-    loader: 'babel-loader',
-    options: { ...options },
-  })),
-  style: jest.fn(options => ({
-    loader: 'style-loader',
-    options: { ...options },
-  })),
-  css: jest.fn(options => ({ loader: 'css-loader', options: { ...options } })),
-  miniCssExtract: jest.fn(options => ({
-    loader: 'mini-css-extract-loader',
-    options: { ...options },
-  })),
-})
-
-const mockRules = () => {
-  const loaders = mockLoaders()
-  return {
-    js: jest.fn(() => ({
-      test: /\.js$/,
-      use: [loaders.js()],
-    })),
-    css: jest.fn(() => ({
-      test: /\.css$/,
-      use: [loaders.style(), loaders.css()],
-    })),
-    cssModules: jest.fn(() => ({
-      test: /\.module\.css$/,
-      use: [loaders.style(), loaders.css({ modules: true })],
-    })),
+class TestUtils {
+  constructor({ stage = 'develop' } = {}) {
+    this.stage = stage
+    this.config = this.mockConfig()
   }
-}
 
-const mockConfig = () => {
-  const rules = mockRules()
-  return {
-    module: {
-      rules: [
-        rules.js(),
-        {
-          oneOf: [rules.cssModules(), rules.css()],
+  mockLoaders() {
+    return {
+      null: jest.fn(options => ({
+        loader: 'null-loader',
+        options: { ...options },
+      })),
+      js: jest.fn(options => ({
+        loader: 'babel-loader',
+        options: { ...options },
+      })),
+      style: jest.fn(options => ({
+        loader: 'style-loader',
+        options: { ...options },
+      })),
+      css: jest.fn(options => ({
+        loader: 'css-loader',
+        options: { ...options },
+      })),
+      miniCssExtract: jest.fn(options => ({
+        loader: 'mini-css-extract-loader',
+        options: { ...options },
+      })),
+    }
+  }
+
+  mockRules() {
+    const loaders = this.mockLoaders()
+    return {
+      js: jest.fn(() => ({
+        test: /\.js$/,
+        use: [loaders.js()],
+      })),
+      css: jest.fn(() => ({
+        test: /\.css$/,
+        use: [loaders.style(), loaders.css()],
+      })),
+      cssModules: jest.fn(() => ({
+        test: /\.module\.css$/,
+        use: [loaders.style(), loaders.css({ modules: true })],
+      })),
+    }
+  }
+
+  mockConfig() {
+    const rules = this.mockRules()
+    return {
+      module: {
+        rules: [
+          rules.js(),
+          {
+            oneOf: [rules.cssModules(), rules.css()],
+          },
+        ],
+      },
+    }
+  }
+
+  mockParams(pluginOptions = {}) {
+    return [
+      {
+        stage: this.stage,
+        getConfig: jest.fn(() => this.config),
+        loaders: this.mockLoaders(),
+        rules: this.mockRules(),
+        actions: {
+          replaceWebpackConfig: jest.fn(nextConfig => {
+            this.config = nextConfig
+          }),
         },
-      ],
-    },
+      },
+      pluginOptions,
+    ]
+  }
+
+  getCssRules() {
+    return this.config.module.rules.slice(-1)[0].oneOf
   }
 }
 
-const mockParams = ({ config: prevConfig, pluginOptions = {} }) => [
-  {
-    stage: 'develop',
-    getConfig: jest.fn(() => prevConfig),
-    loaders: mockLoaders(),
-    rules: mockRules(),
-    actions: {
-      replaceWebpackConfig: jest.fn(nextConfig => {
-        prevConfig = nextConfig
-      }),
-    },
-  },
-  pluginOptions,
-]
-
-module.exports = {
-  mockConfig,
-  mockParams,
-}
+module.exports = TestUtils
