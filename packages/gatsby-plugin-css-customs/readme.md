@@ -26,8 +26,6 @@ module.exports = {
 }
 ```
 
-It adds customs-loader to the CSS webpack rule (`.css`). Option `modules` specifies whether to apply the loader to the rule for CSS Modules (`.module.css`) as well.
-
 gatsby-plugin-css-customs detects [any valid PostCSS configuration][postcss-config] (including options passed to gatsby-plugin-postcss!), so let's create one. `importFrom` will point to a `global.css` file containing our customs and, for the sake of this example, we'll enable all features related to CSS customs:
 
 ```js
@@ -45,6 +43,12 @@ module.exports = {
   },
 }
 ```
+
+### Options
+
+#### `cssModules`
+
+The plugin adds css-customs-loader only to the CSS webpack rule (`.css`). If `cssModules` is `true` the loader is applied to the rule for CSS Modules (`.module.css`) as well.
 
 ## Usage
 
