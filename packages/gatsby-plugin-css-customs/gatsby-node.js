@@ -1,9 +1,10 @@
-module.exports.onCreateWebpackConfig = (
-  { stage, actions, getConfig, loaders, rules },
-  pluginOptions = {}
-) => {
-  const { cssModules = false } = pluginOptions
-
+module.exports.onCreateWebpackConfig = ({
+  stage,
+  actions,
+  getConfig,
+  loaders,
+  rules,
+}) => {
   const config = getConfig()
   const cssLoader = loaders.css()
   const plainCssRule = rules.css()
@@ -24,14 +25,12 @@ module.exports.onCreateWebpackConfig = (
     },
   }
 
-  cssRules.oneOf
-    .filter(cssModules ? isAnyCssRule : isPlainCssRule)
-    .forEach(rule => {
-      const insertIndex = rule.use.findIndex(isCssLoader)
-      if (insertIndex !== -1) {
-        rule.use.splice(insertIndex, 0, cssCustomsLoader)
-      }
-    })
+  cssRules.oneOf.filter(isCssModulesRule).forEach(rule => {
+    const insertIndex = rule.use.findIndex(isCssLoader)
+    if (insertIndex !== -1) {
+      rule.use.splice(insertIndex, 0, cssCustomsLoader)
+    }
+  })
 
   actions.replaceWebpackConfig(config)
 }

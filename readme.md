@@ -5,7 +5,7 @@ This repository contains two packages:
   - [css-customs-loader](/packages/css-customs-loader)
   - [gatsby-plugin-css-customs](/packages/gatsby-plugin-css-customs)
 
-The Gatsby plugin only implements css-customs-loader, so this readme is about css-customs-loader.
+The Gatsby plugin only implements css-customs-loader, so this readme is about css-customs-loader. Just keep in mind that for Gatsby plugin [you have to use CSS Modules](/packages/gatsby-plugin-css-customs/readme.md#use-css-modules).
 
 ---
 
