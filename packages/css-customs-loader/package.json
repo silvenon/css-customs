@@ -40,7 +40,7 @@
     "postcss-brand-colors": "^3.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.4.0",
-    "style-loader": "^0.23.1",
+    "style-loader": "^1.0.0",
     "webpack": "^4.25.1"
   },
   "jest": {
