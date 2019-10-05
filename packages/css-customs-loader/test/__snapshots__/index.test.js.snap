@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can export only locals 1`] = `
-"module.exports = {
+"// Exports
+module.exports = {
 	\\"text\\": \\"_3KySKA6rf07sl0ilq7bBBm\\"
 };
 
@@ -20,9 +21,9 @@ module.exports[\\"customSelectors\\"] = {
 exports[`emits an error when css-customs-loader is placed after css-loader 1`] = `
 "./fixtures/basic.css
 Module build failed (from ../index.js):
-Error: css-customs-loader should be added BEFORE css-loader. /Users/silvenon/Code/css-customs/node_modules/css-loader/index.js?importLoaders=2!/Users/silvenon/Code/css-customs/packages/css-customs-loader/index.js!/Users/silvenon/Code/css-customs/node_modules/postcss-loader/src/index.js!/Users/silvenon/Code/css-customs/packages/css-customs-loader/test/fixtures/basic.css
-    at Object.<anonymous>.exports.addBeforeCssLoader.request [as addBeforeCssLoader] (/Users/silvenon/Code/css-customs/packages/css-customs-loader/lib/errors.js:3:6)
-    at Object.addBeforeCssLoader (/Users/silvenon/Code/css-customs/packages/css-customs-loader/lib/index.js:20:27)"
+Error: css-customs-loader should be added BEFORE css-loader. <CWD>/node_modules/css-loader/dist/cjs.js??ref--4-0!<CWD>/packages/css-customs-loader/index.js!<CWD>/node_modules/postcss-loader/src/index.js!<CWD>/packages/css-customs-loader/test/fixtures/basic.css
+    at Object.<anonymous>.exports.addBeforeCssLoader (<CWD>/packages/css-customs-loader/lib/errors.js:3:6)
+    at Object.addBeforeCssLoader (<CWD>/packages/css-customs-loader/lib/index.js:20:27)"
 `;
 
 exports[`emits an error when postcss-loader is missing 1`] = `
@@ -31,16 +32,16 @@ Module build failed (from ../index.js):
 Error: 
 postcss-loader is missing, you need to use it in order for css-customs-loader to work properly.
   
-    at Object.<anonymous> (/Users/silvenon/Code/css-customs/packages/css-customs-loader/lib/errors.js:8:32)
-    at Runtime._execModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:867:68)
-    at Runtime._loadModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:577:12)
-    at Runtime.requireModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:433:10)
-    at Runtime.requireModuleOrMock (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:598:21)
-    at Object.require (/Users/silvenon/Code/css-customs/packages/css-customs-loader/lib/index.js:8:15)
-    at Runtime._execModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:867:68)
-    at Runtime._loadModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:577:12)
-    at Runtime.requireModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:433:10)
-    at Runtime.requireModuleOrMock (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:598:21)"
+    at Object.<anonymous> (<CWD>/packages/css-customs-loader/lib/errors.js:8:32)
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:867:68)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:577:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:433:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:598:21)
+    at Object.require (<CWD>/packages/css-customs-loader/lib/index.js:8:15)
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:867:68)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:577:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:433:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:598:21)"
 `;
 
 exports[`emits an error when postcss-preset-env is missing 1`] = `
@@ -49,27 +50,23 @@ Module build failed (from ../index.js):
 Error: 
 postcss-preset-env is missing from your plugins, you need to use it in order for css-customs-loader to work properly.
   
-    at Object.<anonymous> (/Users/silvenon/Code/css-customs/packages/css-customs-loader/lib/errors.js:14:35)
-    at Runtime._execModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:867:68)
-    at Runtime._loadModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:577:12)
-    at Runtime.requireModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:433:10)
-    at Runtime.requireModuleOrMock (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:598:21)
-    at Object.require (/Users/silvenon/Code/css-customs/packages/css-customs-loader/lib/index.js:8:15)
-    at Runtime._execModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:867:68)
-    at Runtime._loadModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:577:12)
-    at Runtime.requireModule (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:433:10)
-    at Runtime.requireModuleOrMock (/Users/silvenon/Code/css-customs/node_modules/jest-runtime/build/index.js:598:21)"
+    at Object.<anonymous> (<CWD>/packages/css-customs-loader/lib/errors.js:14:35)
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:867:68)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:577:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:433:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:598:21)
+    at Object.require (<CWD>/packages/css-customs-loader/lib/index.js:8:15)
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:867:68)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:577:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:433:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:598:21)"
 `;
 
 exports[`exposes CSS Modules in the same object as customs 1`] = `
-"exports = module.exports = require(\\"<path to node_modules>/css-loader/lib/css-base.js\\")(false);
-// imports
-
-
-// module
+"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
 exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\\\n._3KySKA6rf07sl0ilq7bBBm {\\\\n  color: lightblue;\\\\n  color: var(--primary-color);\\\\n}\\\\n\\", \\"\\"]);
-
-// exports
+// Exports
 exports.locals = {
 	\\"text\\": \\"_3KySKA6rf07sl0ilq7bBBm\\"
 };
@@ -87,14 +84,9 @@ exports.locals[\\"customSelectors\\"] = {
 `;
 
 exports[`exposes CSS customs in the default export object 1`] = `
-"exports = module.exports = require(\\"<path to node_modules>/css-loader/lib/css-base.js\\")(false);
-// imports
-
-
-// module
+"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
 exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\", \\"\\"]);
-
-// exports
 
 exports.locals = exports.locals || {};
 exports.locals[\\"customMedia\\"] = {
@@ -109,14 +101,9 @@ exports.locals[\\"customSelectors\\"] = {
 `;
 
 exports[`uses PostCSS plugins before postcss-preset-env 1`] = `
-"exports = module.exports = require(\\"<path to node_modules>/css-loader/lib/css-base.js\\")(false);
-// imports
-
-
-// module
+"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
 exports.push([module.id, \\":root {\\\\n  --primary-color: #1da1f2;\\\\n}\\\\n\\", \\"\\"]);
-
-// exports
 
 exports.locals = exports.locals || {};
 exports.locals[\\"customMedia\\"] = {};
@@ -127,14 +114,9 @@ exports.locals[\\"customSelectors\\"] = {};"
 `;
 
 exports[`uses webpack loaders after postcss-loader 1`] = `
-"exports = module.exports = require(\\"<path to node_modules>/css-loader/lib/css-base.js\\")(false);
-// imports
-
-
-// module
+"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
 exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n.text {\\\\n  color: lightblue;\\\\n  color: var(--primary-color);\\\\n}\\\\n\\", \\"\\"]);
-
-// exports
 
 exports.locals = exports.locals || {};
 exports.locals[\\"customMedia\\"] = {};

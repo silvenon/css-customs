@@ -21,7 +21,7 @@ module.exports.onCreateWebpackConfig = ({
   const cssCustomsLoader = {
     loader: require.resolve('css-customs-loader'),
     options: {
-      exportOnlyLocals: stage.includes('html'),
+      onlyLocals: stage.includes('html'),
     },
   }
 

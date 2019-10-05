@@ -11,7 +11,7 @@ const rawLoader = require.resolve('raw-loader')
 
 module.exports = async function(content, sourceMap, meta) {
   const callback = this.async()
-  const { exportOnlyLocals = false } = getOptions(this) || {}
+  const { onlyLocals = false } = getOptions(this) || {}
   const presetEnvOptions = {
     stage: 0,
   }
@@ -137,7 +137,7 @@ module.exports = async function(content, sourceMap, meta) {
       to: undefined,
     })
 
-    const exportObj = exportOnlyLocals ? 'module.exports' : 'exports.locals'
+    const exportObj = onlyLocals ? 'module.exports' : 'exports.locals'
     const exportContent = [
       `${exportObj} = ${exportObj} || {};`,
       ...Object.entries(extractedCustoms).map(
