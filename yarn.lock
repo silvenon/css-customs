@@ -4761,9 +4761,9 @@ functional-red-black-tree@^1.0.1:
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
 gatsby-plugin-css-modules-flow-types@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-css-modules-flow-types/-/gatsby-plugin-css-modules-flow-types-0.1.1.tgz#ab3e523349e3dceae4801dbd8ffe6c05bd4112bd"
-  integrity sha512-vnB3k+AYfEI57f8fRg6Ss987T9OqgOUUTzG/eQm6dJn6aS82ejvQ/XKR1e9tRmBjYq6yt81i8V7oPxrflvrgyQ==
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-css-modules-flow-types/-/gatsby-plugin-css-modules-flow-types-0.1.2.tgz#e7bc187e25d6c82d294460bc544be50d9c8eb5a7"
+  integrity sha512-h4fd/vz9acpeOBmJTP5n+EgZsTDqz/ZqjomNbo3MBtuchZXajG2oZ4/K7dpRC/S2y1DaFbnRBBBKyp+QXU+2LQ==
   dependencies:
     css-modules-flow-types-loader "^1.1.1"
 
