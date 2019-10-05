@@ -1,3 +1,4 @@
+const path = require('path')
 const compile = require('./compile')
 
 const cssCustomsLoader = require.resolve('../')
@@ -8,7 +9,11 @@ const getCompiledOutput = ({ stats, entry }) =>
       ({ name, identifier }) =>
         name.includes(entry) && identifier.includes(cssCustomsLoader)
     )
-    .source.replace(/(["'])(\.\.\/)+node_modules/, '$1<path to node_modules>')
+    // normalize for CI
+    .source.replace(
+      path.relative(`${__dirname}/fixtures`, process.cwd()),
+      '<relative path to CWD>'
+    )
 
 describe(`emits an error`, () => {
   test(`when css-customs-loader is placed after css-loader`, async () => {
@@ -19,7 +24,12 @@ describe(`emits an error`, () => {
           {
             test: /\.css$/,
             use: [
-              'css-loader?importLoaders=2',
+              {
+                loader: 'css-loader',
+                options: {
+                  importLoaders: 2,
+                },
+              },
               cssCustomsLoader,
               'postcss-loader',
             ],
@@ -38,7 +48,12 @@ describe(`emits an error`, () => {
             test: /\.css$/,
             use: [
               cssCustomsLoader,
-              'css-loader?importLoaders=1',
+              {
+                loader: 'css-loader',
+                options: {
+                  importLoaders: 1,
+                },
+              },
               {
                 loader: 'postcss-loader',
                 options: {
@@ -73,7 +88,16 @@ it(`exposes CSS customs in the default export object`, async () => {
     rules: [
       {
         test: /\.css$/,
-        use: [cssCustomsLoader, 'css-loader?importLoaders=1', 'postcss-loader'],
+        use: [
+          cssCustomsLoader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          'postcss-loader',
+        ],
       },
     ],
   })
@@ -89,7 +113,13 @@ it(`exposes CSS Modules in the same object as customs`, async () => {
         test: /\.css$/,
         use: [
           cssCustomsLoader,
-          'css-loader?importLoaders=1&modules',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
           'postcss-loader',
         ],
       },
@@ -106,8 +136,15 @@ it(`can export only locals`, async () => {
       {
         test: /\.css$/,
         use: [
-          `${cssCustomsLoader}?exportOnlyLocals`,
-          'css-loader/locals?importLoaders=1&modules',
+          `${cssCustomsLoader}?onlyLocals`,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              onlyLocals: true,
+            },
+          },
           'postcss-loader',
         ],
       },
@@ -126,7 +163,12 @@ it(`supports files with external @imports`, async () => {
         include: `${__dirname}/fixtures`,
         use: [
           cssCustomsLoader,
-          'css-loader?importLoaders=1',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -147,7 +189,12 @@ it(`uses PostCSS plugins before postcss-preset-env`, async () => {
         test: /\.css$/,
         use: [
           cssCustomsLoader,
-          'css-loader?importLoaders=1',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -173,7 +220,12 @@ it('uses webpack loaders after postcss-loader', async () => {
         test: /\.less$/,
         use: [
           cssCustomsLoader,
-          'css-loader?importLoaders=2',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
+          },
           'postcss-loader',
           'less-loader',
         ],

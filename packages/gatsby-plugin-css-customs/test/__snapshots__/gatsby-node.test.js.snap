@@ -8,7 +8,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": true,
+          "onlyLocals": true,
         },
       },
       Object {
@@ -23,7 +23,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": true,
+          "onlyLocals": true,
         },
       },
       Object {
@@ -47,7 +47,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {
@@ -75,7 +75,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {
@@ -102,7 +102,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {
@@ -123,7 +123,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {
@@ -151,7 +151,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {
@@ -179,7 +179,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {
@@ -206,7 +206,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {
@@ -227,7 +227,7 @@ Array [
       Object {
         "loader": "css-customs-loader/index.js",
         "options": Object {
-          "exportOnlyLocals": false,
+          "onlyLocals": false,
         },
       },
       Object {

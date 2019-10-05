@@ -24,7 +24,7 @@ module.exports = {
             loader: 'css-customs-loader'
             // defaults
             options: {
-              exportOnlyLocals: false,
+              onlyLocals: false,
             },
           },
           'css-loader?importLoaders=1',
@@ -56,16 +56,16 @@ module.exports = {
 
 ### Options
 
-#### `exportOnlyLocals`
+#### `onlyLocals`
 
-This option should be enabled in situations like pre-rendering. You should combine it with [`exportOnlyLocals`][exportOnlyLocals] option in css-loader v2 or [`css-loader/locals`][css-loader-locals] loader in css-loader v1. (Don't use style-loader when pre-rendering.)
+This option should be enabled in situations like pre-rendering. You should combine it with [`onlyLocals`][onlyLocals] option in css-loader v2 or [`css-loader/locals`][css-loader-locals] loader in css-loader v1. (Don't use style-loader when pre-rendering.)
 
 ## Usage
 
 See usage instructions in the [main readme][basic-usage].
 
 [customs]: https://github.com/silvenon/css-customs/blob/master/readme.md#css-customs
-[exportOnlyLocals]: https://github.com/webpack-contrib/css-loader#exportonlylocals
+[onlyLocals]: https://github.com/webpack-contrib/css-loader#onlyLocals
 [css-loader-locals]: https://github.com/webpack-contrib/css-loader/blob/v1.0.1/locals.js
 [postcss-config]: https://github.com/michael-ciniawsky/postcss-load-config
 [basic-usage]: https://github.com/silvenon/css-customs/blob/master/readme.md#basic-usage
