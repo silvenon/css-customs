@@ -1,11 +1,10 @@
-/* eslint-disable no-console */
 const webpack = require('webpack')
 const MemoryFs = require('memory-fs')
 const path = require('path')
 
 // https://webpack.js.org/contribute/writing-a-loader/#testing
 
-module.exports = ({ entry, logErrors = true, writeToDisk = false, rules }) => {
+module.exports = ({ entry, writeToDisk = false, rules }) => {
   const compiler = webpack({
     entry,
     output: {
@@ -27,8 +26,8 @@ module.exports = ({ entry, logErrors = true, writeToDisk = false, rules }) => {
       if (err != null) {
         return reject(err)
       }
-      if (stats.hasErrors() && logErrors) {
-        console.error(stats.toJson().errors.join('\n\n'))
+      if (stats.hasErrors()) {
+        return reject(stats.toJson().errors.join('\n\n'))
       }
       resolve({ stats, entry })
     })
