@@ -42,7 +42,9 @@ Array [
     "use": Array [
       Object {
         "loader": "mini-css-extract-loader",
-        "options": Object {},
+        "options": Object {
+          "hmr": false,
+        },
       },
       Object {
         "loader": "css-customs-loader/index.js",
@@ -142,7 +144,9 @@ Array [
     "use": Array [
       Object {
         "loader": "mini-css-extract-loader",
-        "options": Object {},
+        "options": Object {
+          "hmr": false,
+        },
       },
       Object {
         "loader": "css-modules-flow-types-loader/dist/index.js",
