@@ -22,6 +22,6 @@ jobs:
       run: |
         yarn
         yarn lint
-        yarn test --colors --testTimeout 10000
+        yarn test --colors
       env:
         CI: true
