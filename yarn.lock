@@ -688,10 +688,10 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.6.2":
-  version "7.6.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.2.tgz#c3d6e41b304ef10dcf13777a33e7694ec4a9a6dd"
-  integrity sha512-EXxN64agfUqqIGeEjI5dL5z0Sw0ZwWo1mLTi4mQowCZ42O59b7DRpZAnTC6OqdF28wMBMFKNb/4uFGrVaigSpg==
+"@babel/runtime@^7.6.3":
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
+  integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -4768,11 +4768,11 @@ gatsby-plugin-css-modules-flow-types@^0.1.1:
     css-modules-flow-types-loader "^1.1.1"
 
 gatsby-plugin-postcss@^2.0.2:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.1.10.tgz#c0c86887a596f970a62d0ddf61259058ac04db54"
-  integrity sha512-hXqzqVjTTKvjzG4U9D0/jf9mHjzjjTUVQxDcG/p94B/ccdTt4K48/46+AdrgBwfMOKGfGi8sa8krtk8jNs7J8g==
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.1.13.tgz#406e732af256d223eae13f2853188f5f84342cc7"
+  integrity sha512-ND+ux8YQnH6TOpMgviROkwDI2ZwaP10HahdOpyvZVorC2cEZ3r7sIt8cERxXKI9SYy2KsO1odPEEsu7f09SsCg==
   dependencies:
-    "@babel/runtime" "^7.6.2"
+    "@babel/runtime" "^7.6.3"
     postcss-loader "^3.0.0"
 
 gauge@~2.7.3:
