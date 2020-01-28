@@ -1,19 +1,20 @@
+const requireFromString = require('require-from-string')
 const path = require('path')
 const compile = require('./compile')
 
 const cssCustomsLoader = require.resolve('../')
-const getCompiledOutput = ({ stats, entry }) =>
-  stats
+const getCompiledExportedValue = ({ stats, entry }) => {
+  const { source } = stats
     .toJson()
     .modules.find(
       ({ name, identifier }) =>
         name.includes(entry) && identifier.includes(cssCustomsLoader)
     )
-    // normalize for CI
-    .source.replace(
-      path.relative(`${__dirname}/fixtures`, process.cwd()),
-      '<relative path to CWD>'
-    )
+  return requireFromString(
+    source,
+    `${__dirname}/fixtures/${path.basename(entry)}`
+  )
+}
 
 describe(`emits an error`, () => {
   test(`when css-customs-loader is placed after css-loader`, async () => {
@@ -101,8 +102,20 @@ it(`exposes CSS customs in the default export object`, async () => {
       },
     ],
   })
-  const output = getCompiledOutput({ stats, entry })
-  expect(output).toMatchSnapshot()
+  const { locals } = getCompiledExportedValue({ stats, entry })
+  expect(locals).toMatchInlineSnapshot(`
+    Object {
+      "customMedia": Object {
+        "--narrow-window": "(max-width: 30em)",
+      },
+      "customProperties": Object {
+        "--primary-color": "lightblue",
+      },
+      "customSelectors": Object {
+        ":--title": "h1",
+      },
+    }
+  `)
 })
 
 it(`exposes CSS Modules in the same object as customs`, async () => {
@@ -125,8 +138,21 @@ it(`exposes CSS Modules in the same object as customs`, async () => {
       },
     ],
   })
-  const output = getCompiledOutput({ stats, entry })
-  expect(output).toMatchSnapshot()
+  const { locals } = getCompiledExportedValue({ stats, entry })
+  expect(locals).toMatchInlineSnapshot(`
+    Object {
+      "customMedia": Object {
+        "--narrow-window": "(max-width: 30em)",
+      },
+      "customProperties": Object {
+        "--primary-color": "lightblue",
+      },
+      "customSelectors": Object {
+        ":--title": "h1",
+      },
+      "text": "_3KySKA6rf07sl0ilq7bBBm",
+    }
+  `)
 })
 
 it(`can export only locals`, async () => {
@@ -150,8 +176,21 @@ it(`can export only locals`, async () => {
       },
     ],
   })
-  const output = getCompiledOutput({ stats, entry })
-  expect(output).toMatchSnapshot()
+  const result = getCompiledExportedValue({ stats, entry })
+  expect(result).toMatchInlineSnapshot(`
+    Object {
+      "customMedia": Object {
+        "--narrow-window": "(max-width: 30em)",
+      },
+      "customProperties": Object {
+        "--primary-color": "lightblue",
+      },
+      "customSelectors": Object {
+        ":--title": "h1",
+      },
+      "text": "_3KySKA6rf07sl0ilq7bBBm",
+    }
+  `)
 })
 
 it(`supports files with external @imports`, async () => {
@@ -210,8 +249,16 @@ it(`uses PostCSS plugins before postcss-preset-env`, async () => {
       },
     ],
   })
-  const output = getCompiledOutput({ stats, entry })
-  expect(output).toMatchSnapshot()
+  const { locals } = getCompiledExportedValue({ stats, entry })
+  expect(locals).toMatchInlineSnapshot(`
+    Object {
+      "customMedia": Object {},
+      "customProperties": Object {
+        "--primary-color": "#1da1f2",
+      },
+      "customSelectors": Object {},
+    }
+  `)
 })
 
 it('uses webpack loaders after postcss-loader', async () => {
@@ -234,6 +281,14 @@ it('uses webpack loaders after postcss-loader', async () => {
       },
     ],
   })
-  const output = getCompiledOutput({ stats, entry })
-  expect(output).toMatchSnapshot()
+  const { locals } = getCompiledExportedValue({ stats, entry })
+  expect(locals).toMatchInlineSnapshot(`
+    Object {
+      "customMedia": Object {},
+      "customProperties": Object {
+        "--primary-color": "lightblue",
+      },
+      "customSelectors": Object {},
+    }
+  `)
 })
