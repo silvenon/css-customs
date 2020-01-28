@@ -155,30 +155,32 @@ it(`can export only locals`, async () => {
 })
 
 it(`supports files with external @imports`, async () => {
-  await compile({
-    entry: './fixtures/external.css',
-    rules: [
-      {
-        test: /\.css$/,
-        include: `${__dirname}/fixtures`,
-        use: [
-          cssCustomsLoader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
+  await expect(
+    compile({
+      entry: './fixtures/external.css',
+      rules: [
+        {
+          test: /\.css$/,
+          include: `${__dirname}/fixtures`,
+          use: [
+            cssCustomsLoader,
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+              },
             },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: { path: __dirname },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: { path: __dirname },
+              },
             },
-          },
-        ],
-      },
-    ],
-  })
+          ],
+        },
+      ],
+    })
+  ).resolves.toBeDefined()
 })
 
 it(`uses PostCSS plugins before postcss-preset-env`, async () => {
