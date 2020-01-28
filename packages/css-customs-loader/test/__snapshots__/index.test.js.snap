@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`can export only locals 1`] = `
-"// Exports
-module.exports = {
-	\\"text\\": \\"_3KySKA6rf07sl0ilq7bBBm\\"
-};
-
-module.exports = module.exports || {};
-module.exports[\\"customMedia\\"] = {
-  \\"--narrow-window\\": \\"(max-width: 30em)\\"
-};
-module.exports[\\"customProperties\\"] = {
-  \\"--primary-color\\": \\"lightblue\\"
-};
-module.exports[\\"customSelectors\\"] = {
-  \\":--title\\": \\"h1\\"
-};"
-`;
-
 exports[`emits an error when css-customs-loader is placed after css-loader 1`] = `
 "./fixtures/basic.css
 Module build failed (from ../index.js):
@@ -60,68 +42,4 @@ postcss-preset-env is missing from your plugins, you need to use it in order for
     at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:678:12)
     at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:536:10)
     at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:699:21)"
-`;
-
-exports[`exposes CSS Modules in the same object as customs 1`] = `
-"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
-// Module
-exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\\\n._3KySKA6rf07sl0ilq7bBBm {\\\\n  color: lightblue;\\\\n  color: var(--primary-color);\\\\n}\\\\n\\", \\"\\"]);
-// Exports
-exports.locals = {
-	\\"text\\": \\"_3KySKA6rf07sl0ilq7bBBm\\"
-};
-
-exports.locals = exports.locals || {};
-exports.locals[\\"customMedia\\"] = {
-  \\"--narrow-window\\": \\"(max-width: 30em)\\"
-};
-exports.locals[\\"customProperties\\"] = {
-  \\"--primary-color\\": \\"lightblue\\"
-};
-exports.locals[\\"customSelectors\\"] = {
-  \\":--title\\": \\"h1\\"
-};"
-`;
-
-exports[`exposes CSS customs in the default export object 1`] = `
-"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
-// Module
-exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n\\", \\"\\"]);
-
-exports.locals = exports.locals || {};
-exports.locals[\\"customMedia\\"] = {
-  \\"--narrow-window\\": \\"(max-width: 30em)\\"
-};
-exports.locals[\\"customProperties\\"] = {
-  \\"--primary-color\\": \\"lightblue\\"
-};
-exports.locals[\\"customSelectors\\"] = {
-  \\":--title\\": \\"h1\\"
-};"
-`;
-
-exports[`uses PostCSS plugins before postcss-preset-env 1`] = `
-"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
-// Module
-exports.push([module.id, \\":root {\\\\n  --primary-color: #1da1f2;\\\\n}\\\\n\\", \\"\\"]);
-
-exports.locals = exports.locals || {};
-exports.locals[\\"customMedia\\"] = {};
-exports.locals[\\"customProperties\\"] = {
-  \\"--primary-color\\": \\"#1da1f2\\"
-};
-exports.locals[\\"customSelectors\\"] = {};"
-`;
-
-exports[`uses webpack loaders after postcss-loader 1`] = `
-"exports = module.exports = require(\\"<relative path to CWD>/node_modules/css-loader/dist/runtime/api.js\\")(false);
-// Module
-exports.push([module.id, \\":root {\\\\n  --primary-color: lightblue;\\\\n}\\\\n.text {\\\\n  color: lightblue;\\\\n  color: var(--primary-color);\\\\n}\\\\n\\", \\"\\"]);
-
-exports.locals = exports.locals || {};
-exports.locals[\\"customMedia\\"] = {};
-exports.locals[\\"customProperties\\"] = {
-  \\"--primary-color\\": \\"lightblue\\"
-};
-exports.locals[\\"customSelectors\\"] = {};"
 `;
