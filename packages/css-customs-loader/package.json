@@ -28,7 +28,7 @@
     "loader-utils": "^1.1.0",
     "postcss": "^7.0.5",
     "postcss-load-config": "^2.0.0",
-    "raw-loader": "^0.5.1",
+    "raw-loader": "^4.0.0",
     "require-from-string": "^2.0.2"
   },
   "devDependencies": {
