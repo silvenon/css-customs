@@ -3,8 +3,9 @@ const postcss = require('postcss')
 const postcssrc = require('postcss-load-config')
 const parsePostcssLoaderOptions = require('postcss-loader/src/options')
 const postcssPresetEnv = require('postcss-preset-env')
+const requireFromString = require('require-from-string')
 const path = require('path')
-const { findNextLoader, isLoader, exec } = require('./utils')
+const { findNextLoader, isLoader } = require('./utils')
 const error = require('./errors')
 
 const rawLoader = require.resolve('raw-loader')
@@ -42,7 +43,7 @@ module.exports = async function(content, sourceMap, meta) {
     css = await new Promise((resolve, reject) => {
       this.loadModule(request, (err, sourceBeforePostcss) => {
         if (err) return reject(err)
-        resolve(exec(sourceBeforePostcss, this.resourcePath, this.context))
+        resolve(requireFromString(sourceBeforePostcss, this.resourcePath))
       })
     })
   } catch (err) {
