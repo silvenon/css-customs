@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "css-loader": "^3.2.0",
-    "jest": "^24.5.0",
+    "jest": "^25.1.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "memory-fs": "^0.4.1",
