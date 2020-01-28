@@ -24,9 +24,7 @@ const KittenImage = () => (
       ${url[600]} 600w
     `}
     sizes={`
-      ${customMedia['--narrow-window']} ${
-      customProperties['--image-width-narrow']
-    },
+      ${customMedia['--narrow-window']} ${customProperties['--image-width-narrow']},
       ${customProperties['--image-width']}
     `}
   />
