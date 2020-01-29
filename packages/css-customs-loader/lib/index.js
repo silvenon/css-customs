@@ -30,7 +30,7 @@ module.exports = async function(content, sourceMap, meta) {
 
   const additionalLoaders = this.loaders.slice(postcssLoaderIndex + 1)
   const additionalLoadersRequest = [
-    rawLoader,
+    `${rawLoader}?esModule=false`,
     ...additionalLoaders.map(({ request }) => request),
   ].join('!')
   const request =
