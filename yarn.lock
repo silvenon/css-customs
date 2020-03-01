@@ -4985,9 +4985,9 @@ gatsby-plugin-css-modules-flow-types@^0.1.1:
     css-modules-flow-types-loader "^1.1.1"
 
 gatsby-plugin-postcss@^2.0.2:
-  version "2.1.19"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.1.19.tgz#2315e604295e9b60a8b36239ce14cfa85771c84d"
-  integrity sha512-6ExDfrepC05CuqZx9tCXk7KoVGopt5H+03oPQMUXUuJcBeJL6L61jC+l3M5T1x6TbzAtHd45b84BdNKq2+QUuQ==
+  version "2.1.20"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.1.20.tgz#643cfc03c8003a8470c23e8aa2f132723eebb435"
+  integrity sha512-Voy3B796JQxBBhd/4DVpD3dhQfAE5dnkXH2MXJgedmTS1hh0Gyj2lho6wEyVszyPygPNUjtF3mXVUc3yUZ+EGA==
   dependencies:
     "@babel/runtime" "^7.7.6"
     postcss-loader "^3.0.0"
