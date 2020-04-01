@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const MemoryFs = require('memory-fs')
 const path = require('path')
 
-const normalizeOutput = str =>
+const normalizeOutput = (str) =>
   str
     // for CI
     .replace(new RegExp(process.cwd(), 'g'), '<CWD>')

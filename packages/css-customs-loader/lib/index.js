@@ -10,7 +10,7 @@ const error = require('./errors')
 
 const rawLoader = require.resolve('raw-loader')
 
-module.exports = async function(content, sourceMap, meta) {
+module.exports = async function (content, sourceMap, meta) {
   const callback = this.async()
   const { onlyLocals = false } = getOptions(this) || {}
   const presetEnvOptions = {
@@ -21,7 +21,7 @@ module.exports = async function(content, sourceMap, meta) {
     return callback(error.addBeforeCssLoader(this.request))
   }
 
-  const postcssLoaderIndex = this.loaders.findIndex(loader =>
+  const postcssLoaderIndex = this.loaders.findIndex((loader) =>
     isLoader(loader, 'postcss-loader')
   )
   if (postcssLoaderIndex === -1) {
@@ -59,7 +59,7 @@ module.exports = async function(content, sourceMap, meta) {
 
   if (
     Object.keys(postcssLoader.options || {}).filter(
-      option => !['ident', 'config', 'sourceMap'].includes(option)
+      (option) => !['ident', 'config', 'sourceMap'].includes(option)
     ).length > 0
   ) {
     const { options, plugins } = await parsePostcssLoaderOptions.call(
@@ -103,13 +103,13 @@ module.exports = async function(content, sourceMap, meta) {
     }
   }
 
-  ;['parser', 'syntax', 'stringifier'].forEach(option => {
+  ;['parser', 'syntax', 'stringifier'].forEach((option) => {
     if (typeof postcssOptions[option] === 'string') {
       postcssOptions[option] = require(option)
     }
   })
 
-  postcssPlugins = postcssPlugins.map(plugin =>
+  postcssPlugins = postcssPlugins.map((plugin) =>
     plugin.postcssPlugin == null ? plugin() : plugin
   )
 
@@ -128,7 +128,7 @@ module.exports = async function(content, sourceMap, meta) {
       ...previousPostcssPlugins,
       postcssPresetEnv({
         ...presetEnvOptions,
-        exportTo: customs => {
+        exportTo: (customs) => {
           extractedCustoms = customs
         },
       }),

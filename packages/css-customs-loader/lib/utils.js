@@ -4,12 +4,12 @@ const isLoader = (loader, loaderName) =>
 const findPreviousLoader = (self, loaderName) =>
   self.loaders
     .slice(0, self.loaderIndex)
-    .find(loader => isLoader(loader, loaderName))
+    .find((loader) => isLoader(loader, loaderName))
 
 const findNextLoader = (self, loaderName) =>
   self.loaders
     .slice(self.loaderIndex + 1)
-    .find(loader => isLoader(loader, loaderName))
+    .find((loader) => isLoader(loader, loaderName))
 
 module.exports = {
   isLoader,

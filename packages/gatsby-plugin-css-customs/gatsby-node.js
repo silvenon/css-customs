@@ -11,12 +11,12 @@ module.exports.onCreateWebpackConfig = ({
   const cssModulesRule = rules.cssModules()
 
   const isCssLoader = ({ loader }) => loader === cssLoader.loader
-  const isPlainCssRule = rule => (rule.test.source = plainCssRule.test.source)
-  const isCssModulesRule = rule =>
+  const isPlainCssRule = (rule) => (rule.test.source = plainCssRule.test.source)
+  const isCssModulesRule = (rule) =>
     (rule.test.source = cssModulesRule.test.source)
-  const isAnyCssRule = rule => isPlainCssRule(rule) || isCssModulesRule(rule)
+  const isAnyCssRule = (rule) => isPlainCssRule(rule) || isCssModulesRule(rule)
   const cssRules = config.module.rules.find(
-    rule => Array.isArray(rule.oneOf) && rule.oneOf.every(isAnyCssRule)
+    (rule) => Array.isArray(rule.oneOf) && rule.oneOf.every(isAnyCssRule)
   )
   const cssCustomsLoader = {
     loader: require.resolve('css-customs-loader'),
@@ -25,7 +25,7 @@ module.exports.onCreateWebpackConfig = ({
     },
   }
 
-  cssRules.oneOf.filter(isCssModulesRule).forEach(rule => {
+  cssRules.oneOf.filter(isCssModulesRule).forEach((rule) => {
     const insertIndex = rule.use.findIndex(isCssLoader)
     if (insertIndex !== -1) {
       rule.use.splice(insertIndex, 0, cssCustomsLoader)

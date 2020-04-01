@@ -23,7 +23,7 @@
     "jest": "^25.1.0",
     "lerna": "^3.8.4",
     "lint-staged": "^10.0.3",
-    "prettier": "^1.15.2"
+    "prettier": "^2.0.2"
   },
   "jest": {
     "projects": [

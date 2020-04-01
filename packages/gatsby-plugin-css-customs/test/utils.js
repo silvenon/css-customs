@@ -10,25 +10,25 @@ class TestUtils {
 
   mockLoaders() {
     return {
-      null: jest.fn(options => ({
+      null: jest.fn((options) => ({
         loader: 'null-loader',
         options: { ...options },
       })),
-      js: jest.fn(options => ({
+      js: jest.fn((options) => ({
         loader: 'babel-loader',
         options: { ...options },
       })),
-      style: jest.fn(options => ({
+      style: jest.fn((options) => ({
         loader: 'style-loader',
         options: { ...options },
       })),
-      css: jest.fn(options => ({
+      css: jest.fn((options) => ({
         loader: this.stage.includes('html')
           ? 'css-loader/locals'
           : 'css-loader',
         options: { ...options },
       })),
-      miniCssExtract: jest.fn(options => ({
+      miniCssExtract: jest.fn((options) => ({
         loader: 'mini-css-extract-loader',
         options: { ...options },
       })),
@@ -79,7 +79,7 @@ class TestUtils {
         loaders: this.mockLoaders(),
         rules: this.mockRules(),
         actions: {
-          replaceWebpackConfig: jest.fn(nextConfig => {
+          replaceWebpackConfig: jest.fn((nextConfig) => {
             this.config = nextConfig
           }),
         },
