@@ -1,4 +1,4 @@
-exports.addBeforeCssLoader = request =>
+exports.addBeforeCssLoader = (request) =>
   new Error(
     `
 css-customs-loader should be added BEFORE css-loader. ${request}
