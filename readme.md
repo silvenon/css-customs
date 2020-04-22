@@ -1,4 +1,4 @@
-# CSS Customs ![monorepo](https://img.shields.io/badge/mono-repo-ff69b4.svg) [![Travis (.org) branch](https://img.shields.io/travis/silvenon/css-customs.svg)](https://travis-ci.org/silvenon/css-customs)
+# CSS Customs ![monorepo](https://img.shields.io/badge/mono-repo-ff69b4.svg) ![CI](https://github.com/silvenon/css-customs/workflows/CI/badge.svg)
 
 This repository contains two packages:
 
