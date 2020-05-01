@@ -15,15 +15,15 @@ Error:
 postcss-loader is missing, you need to use it in order for css-customs-loader to work properly.
   
     at Object.<anonymous> (<CWD>/packages/css-customs-loader/lib/errors.js:8:32)
-    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1056:24)
-    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:684:12)
-    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:542:10)
-    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:705:21)
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1207:24)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:807:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:664:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:828:21)
     at Object.require (<CWD>/packages/css-customs-loader/lib/index.js:9:15)
-    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1056:24)
-    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:684:12)
-    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:542:10)
-    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:705:21)"
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1207:24)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:807:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:664:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:828:21)"
 `;
 
 exports[`emits an error when postcss-preset-env is missing 1`] = `
@@ -33,13 +33,13 @@ Error:
 postcss-preset-env is missing from your plugins, you need to use it in order for css-customs-loader to work properly.
   
     at Object.<anonymous> (<CWD>/packages/css-customs-loader/lib/errors.js:14:35)
-    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1056:24)
-    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:684:12)
-    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:542:10)
-    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:705:21)
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1207:24)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:807:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:664:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:828:21)
     at Object.require (<CWD>/packages/css-customs-loader/lib/index.js:9:15)
-    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1056:24)
-    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:684:12)
-    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:542:10)
-    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:705:21)"
+    at Runtime._execModule (<CWD>/node_modules/jest-runtime/build/index.js:1207:24)
+    at Runtime._loadModule (<CWD>/node_modules/jest-runtime/build/index.js:807:12)
+    at Runtime.requireModule (<CWD>/node_modules/jest-runtime/build/index.js:664:10)
+    at Runtime.requireModuleOrMock (<CWD>/node_modules/jest-runtime/build/index.js:828:21)"
 `;
