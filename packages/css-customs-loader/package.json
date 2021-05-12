@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "loader-utils": "^2.0.0",
-    "postcss": "^7.0.5",
+    "postcss": "^8.2.10",
     "postcss-load-config": "^2.0.0",
     "raw-loader": "^4.0.0",
     "require-from-string": "^2.0.2"
