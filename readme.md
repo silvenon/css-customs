@@ -1,6 +1,6 @@
 # CSS Customs ![not maintained](https://img.shields.io/badge/maintained-no-red) ![monorepo](https://img.shields.io/badge/mono-repo-ff69b4.svg) ![CI](https://github.com/silvenon/css-customs/workflows/CI/badge.svg)
 
-This project is **no longer maintained** because I'm not using it anymore, but it was a fun experiment. At the time of this writing I'm all about [Tailwind CSS](https://tailwindcss.com/) now.
+This project is **no longer maintained** because I'm not using it anymore, and it was very hacky to begin with so it was getting hard to update it, but it was a fun experiment. At the time of this writing I'm all about [Tailwind CSS](https://tailwindcss.com/) now.
 
 This repository contains two packages:
 
